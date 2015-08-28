@@ -1,10 +1,26 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Year Completed</th>
-  </tr>
-  <tr>
-    <td><%= @landmark.name %></td>
-    <td><%= @landmark.year_completed %></td>
-  </tr>
-<table>
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Year Completed</th>
+        <th>Important figure</th>
+        <th>Title(s) of figure</th>
+      </tr>
+      <tr>
+        <td><%= @landmark.name %></td>
+        <td><%= @landmark.year_completed %></td>
+        <% if @landmark.figure %>
+          <td><%= @landmark.figure.name %></td>
+          <td><% @landmark.figure.titles.each do |title| %>
+          	<%= title.name %><br>
+          <% end %></td>
+        <% end %>
+      </tr>
+    </table> 
+  <br>
+  <a href='/'>Back to list</a>
+  </body>
+</html>

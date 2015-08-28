@@ -6,11 +6,18 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 ENV['SINATRA_ENV'] = 'test'
 require_relative '../config/environment'
+require 'rspec'
+require 'capybara/rspec'
+require 'capybara/dsl'
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
   config.include Rack::Test::Methods
+  config.include Capybara::DSL
+  # config.include Capybara::Node::Actions
+  # config.include Capybara::Node::Finders
+  # config.include Capybara::Node::Simple
 
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
@@ -22,3 +29,7 @@ end
 def app
   Rack::Builder.parse_file('config.ru').first
 end
+
+
+Capybara.app = app
+

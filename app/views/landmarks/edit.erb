@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+  	<h3>Which landmark needs to be edited?</h3>
+  	<form action="/edit_landmark" method="POST">
+	  	<% Landmark.all.each do |landmark| %>
+		 	 	<label for=<%= "#{landmark.slug}" %>><%= landmark.name %></label>
+		  	<input type="radio" name="<%= landmark.name %>" id=<%= "#{landmark.	slug}" %>><br>
+	  	<% end %>
+  		<input type="submit" id="submit" value="That's the one" />
+  	</form>
+  </body>
+</html>
