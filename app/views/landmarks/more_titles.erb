@@ -1,0 +1,10 @@
+<h3>More titles? Okay. What other title does s/he have:</h3>
+<form action='/more_titles' method="POST">
+<input name="title name"><br>
+<a>Does <%= @figure.name %> have even more titles?</a>
+  	<label for="choice">Yes</label>
+  	<input type="radio" name="yes or no" id="choice" value="yes">
+  	<label for="choice">No</label>
+  	<input type="radio" name="yes or no" id="choice" value="no">
+  	<input type="submit" value="next...">
+</form>

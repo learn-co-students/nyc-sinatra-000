@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Landmarks!</title>
+  </head>
+  <body>
+    <h1>All landmarks</h1>
+    <% @landmarks.each do |landmark| %>
+    <a href=<%= "/landmark/#{landmark.slug}" %>><%= landmark.name %></a> - <%= landmark.year_completed %><br>
+    <% end %>
+    <br><br>
+    <a href='/new_landmark'>Create a new landmark</a><br>
+    <a href='/edit_landmark'>Edit a landmark</a>
+  </body>
+</html>
