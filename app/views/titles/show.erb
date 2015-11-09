@@ -1,0 +1,8 @@
+<h1>Title: <%= @title.name %></h1>
+<h3>Title Holders:</h3>
+<ul>
+  <% @title.figures.all.each do |figure| %>
+    <li><%= figure.name %></li>
+  <% end %>
+</ul>
+<a href='/titles'>Show all</a>

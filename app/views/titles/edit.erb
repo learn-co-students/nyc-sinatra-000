@@ -1,0 +1,14 @@
+<h1><%= "Edit title: #{@title.name}" %></h1>
+<form method='POST'>
+  Name: <input name='name' value='<%= @title.name %>'><br>
+  Title Holders:<br>
+  <% Figure.all.each do |figure| %>
+    <% if @title.figures.include?(figure) %>
+      <input type='checkbox' name='figures[]' value='<%= figure.id %>' checked> <%= figure.name %><br>
+    <% else %>
+      <input type='checkbox' name='figures[]' value='<%= figure.id %>'> <%= figure.name %><br>
+    <% end %>  
+  <% end %>
+  <br>
+  <input type='submit' value='Save'>
+</form>

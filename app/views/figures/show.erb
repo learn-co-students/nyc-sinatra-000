@@ -1,0 +1,13 @@
+<h1>Figure: <%= @figure.name %></h1>
+<table>
+  <tr>
+    <th>Landmarks</th>
+    <td><%= @figure.landmarks.reduce("") { |str, e| full_name = "#{e.name} (#{e.year_completed})"; str == "" ? str << full_name : str << ", #{full_name}" } %></td>
+  </tr>
+  <tr>
+    <th>Titles</th>
+    <td><%= @figure.titles.reduce("") { |str, e| str == "" ? str << e.name : str << ", #{e.name}" } %></td>
+  </tr>  
+</table>
+<br>
+<a href='/figures'>Show all</a>

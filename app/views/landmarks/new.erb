@@ -1,0 +1,15 @@
+<h1>New Landmark</h1>
+<form method='POST'>
+  <fieldset>
+    Name: <input name='name'>
+    Year completed: <input name='year_completed'>
+  </fieldset>
+  <fieldset>  
+    Figure: <input name='figure[name]'><br>
+    Titles (if a Figure is new):<br>
+    <% Title.all.each do |title| %>
+      <input type='checkbox' name='figure[titles][]' value='<%= title.id %>'> <%= title.name %><br>
+    <% end %>
+  </fieldset>
+  <input type='submit' value='Create'>
+</form>
