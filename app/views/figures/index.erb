@@ -1,0 +1,20 @@
+<h1>Figures</h1>
+<a href='/figures/new'>Create</a><br><br>
+<table>
+  <tr>
+    <th>Figure</th>
+    <th>Figure Titles</th>
+    <th>Landmarks Founded</th>
+    <th>Edit</th>
+  </tr>
+  <% Figure.all.each do |figure| %>
+  <tr>
+    <td><a href='<%= "figures/#{figure.id}" %>'><%= figure.name %></a></td>
+    <td><%= figure.titles.reduce("") { |str, e| str == "" ? str << e.name : str << ", #{e.name}" } %></td>
+    <td><%= figure.landmarks.reduce("") { |str, e| full_name = "#{e.name} (#{e.year_completed})"; str == "" ? str << full_name : str << ", #{full_name}" } %></td>
+    <td><a href='<%= "figures/#{figure.id}/edit" %>'>***</a></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<a href='/'>index</a>

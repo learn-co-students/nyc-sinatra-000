@@ -1,0 +1,18 @@
+<h1>Titles</h1>
+<a href='/titles/new'>Create</a><br><br>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Title Holders</th>
+    <th>Edit</th>
+  </tr>
+  <% Title.all.each do |title| %>
+  <tr>
+    <td><a href='<%= "titles/#{title.id}" %>'><%= title.name %></a></td>
+    <td><%= title.figures.reduce("") { |str, e| str == "" ? str << e.name : str << ", #{e.name}" } %></td>
+    <td><a href='<%= "titles/#{title.id}/edit" %>'>***</a></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<a href='/'>index</a>

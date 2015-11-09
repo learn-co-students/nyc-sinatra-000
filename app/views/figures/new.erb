@@ -1,0 +1,11 @@
+<h1>New Figure</h1>
+<form method='POST'>
+  <fieldset>
+    Name: <input name='name'><br>
+    Titles:<br>
+    <% Title.all.each do |title| %>
+      <input type='checkbox' name='titles[]' value='<%= title.id %>'> <%= title.name %><br>
+    <% end %>
+  </fieldset>
+  <input type='submit' value='Create'>
+</form>

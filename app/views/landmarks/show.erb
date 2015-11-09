@@ -1,10 +1,14 @@
+<h1><%= @landmark.name %></h1>
 <table>
   <tr>
-    <th>Name</th>
     <th>Year Completed</th>
+    <th>Founder</th>
+    <th>Titles of the Founder</th>
   </tr>
   <tr>
-    <td><%= @landmark.name %></td>
     <td><%= @landmark.year_completed %></td>
+    <td><%= @landmark.figure.name %></td>
+    <td><%= @landmark.figure.titles.reduce("") { |str, title| str == "" ? str << "#{title.name}" : str << ", #{title.name}" } %></td>
   </tr>
-<table>
+</table>
+<a href='/landmarks'>Show all</a>
