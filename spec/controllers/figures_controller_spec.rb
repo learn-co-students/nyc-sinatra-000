@@ -23,7 +23,7 @@ describe FiguresController do
     expect(page.body).to include('figure[title_ids][]')
     expect(page.body).to include('figure[landmark_ids][]')
     expect(page.body).to include('landmark[name]')
-    expect(page.body).to include('title[name]')
+    expect(page.body).to include('title[name]') ###for some reason this cannot be combined with the id new_title or test two fails
   end
 
   it "allows you to create a new figure with a title" do
