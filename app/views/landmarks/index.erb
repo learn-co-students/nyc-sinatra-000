@@ -1,0 +1,8 @@
+<h2> Landmarks </h2>
+<ul>
+<% @landmarks.each do |lm| %>
+  <li><%= lm.name %></li>
+  <li><%= lm.figure_id %></li>
+  <li><%= lm.year_completed %></li>
+  <% end %>
+</ul>
